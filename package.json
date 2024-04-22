@@ -1,5 +1,7 @@
 {
   "name": "pollcord",
+  "package-name": "pollcord",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/shockbs/pollcord.git"
