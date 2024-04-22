@@ -1,0 +1,59 @@
+{
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "esm": true
+  },
+  "compilerOptions": {
+    "incremental": false, 
+    "target": "ES2020",
+    "lib": [
+      "ES2020"
+    ],
+  "compilerOptions": {
+    "incremental": false,
+    "target": "ES2020",
+    "lib": [
+      "ES2020"
+    ],
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "types": [
+      "node"
+    ],
+    "declaration": true,
+    "importsNotUsedAsValues": "remove",
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
+},
+ "environment": {
+    "moduleDetection": "auto",
+    "module": "NodeNext",
+    "rootDir": ".",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ],
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./build",
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "allowUnusedLabels": true,
+    "allowUnreachableCodnulle": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  }
+}

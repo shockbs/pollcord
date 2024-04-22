@@ -1,9 +1,73 @@
 {
   "name": "pollcord",
+  "description": "Send and use the new Discord poll feauture with discord.js",
+  "type": "module",
   "package-name": "pollcord",
   "version": "0.0.1",
+  "author": "shockbs",
+  "license": "CC-BY-NC 4.0",
+  "exports": "index.ts",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/shockbs/pollcord.git"
+  },
+  "homepage": "https://github.com/shockbs/pollcord#readme",
+  "keywords": [
+    "pollcord",
+    "discord-poll",
+    "discord-polls",
+    "discord-new-poll",
+    "discord.js",
+    "discord-new-polls",
+    "poll-discord",
+    "polls-discord",
+    "discord.js-poll",
+    "discord.js-polls",
+    "discordjs-poll",
+    "discordjs-polls",
+    "djs-poll",
+    "djs-polls",
+    "dispoll",
+    "dispolls",
+    "shockbs-polls",
+    "shockbs-poll",
+    "discord-poll-built-in",
+    "poll",
+    "discordjs",
+    "shockbs",
+    "poll-generator-discord",
+    "discord-generate-polls",
+    "discord-generate-poll",
+    "discord-poll-generator",
+    "discord-polls-generator",
+    "poll-generator-discord.js",
+    "discord.js-generate-polls",
+    "discord.js-generate-poll",
+    "discord.js-poll-generator",
+    "discord.js-polls-generator",
+    "poll-generator-discordjs",
+    "discordjs-generate-polls",
+    "discordjs-generate-poll",
+    "discordjs-poll-generator",
+    "discordjs-polls-generator",
+    "poll-generator-djs",
+    "djsgenerate-polls",
+    "djs-generate-poll",
+    "djs-poll-generator",
+    "djs-polls-generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/shockbs/pollcord/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3",
+    "discord.js": "^14.14.1",
+    "emoji-regex": "^10.3.0"
   }
 }
