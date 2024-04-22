@@ -1,4 +1,7 @@
-{ 
-"name": "pollcord", 
-"repository": { "type": "git", "url": "https://github.com/shockbs/pollcord.git" 
+{
+  "name": "pollcord",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shockbs/pollcord.git"
+  }
 }
