@@ -13,11 +13,9 @@ interface ShockOptions {
     K: boolean;
 }*/
 function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions*/, messageOptions/*:any*/, shock/*: ShockOptions*/) {
-    if (!options.question || !options.answers || options.multiSelect === undefined || !options.duration) {
+    try {
+    if (!options.question?.length || !options.answers?.length || !options.duration) {
         throw new Error("Missing required options");
-    }
-    if (typeof options.duration !== "number") {
-        throw new Error("duration must be provided as a number");
     }
     if (answers.length > 10) {
         throw new Error("The answers array should not have more than 10");
@@ -34,7 +32,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
         options.question = options.question.substr(0,299) + "…";
     }
     if (typeof options.duration !== ("number"||"string")) {
-        throw new Error("duration must be provided as a number");
+        throw new Error("duration must be provided as a number or string");
     }
     if (typeof options.answers !== "array") {
         throw new Error("Answers should be an array");
@@ -132,5 +130,8 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     }
     // SHOCK
     return client.rest.post(`/channels/${channelId}/messages`, { body });
+    } catch(e) {
+        throw new Error(e.message+e.stack||null)
+    }
 }
 module.exports = { ShockBS };

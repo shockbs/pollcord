@@ -12,11 +12,11 @@ npm i pollcord
 ```
 Import pollcord
 ```js
-import pollcord from "pollcord"
+const pollcord = (import("pollcord")).ShockBS
 ```
-With cjs:
+or
 ```js
-const pollcord = require("pollcord")
+const pollcord = (require("pollcord")).ShockBS
 ```
 ## Usage
 ```js
@@ -102,11 +102,34 @@ pollcord(base, channelId, pollCordOptions, messageOptions)
 ```
 ## Examples:
 ```js
-pollcord(interaction.client, interaction.channelId, { question: "Why PollCord?", answers: {{text:"Performant",emoji:"😏"}, {text:"Fully written in Typescript",emoji:"😍"}, {text: "Beginner Friendly",emoji:"😀"}}, duration: "7 days", multiSelect: true }, ,{ content: "@everyone plz vote this poll thx", embeds: [new EmbedBuilder().setColor("Blurple").setDescription("PollCord")], components: [new ActionRowBuilder().addComponents(new ButtonBuilder({style: ButtonStyle.Link, label: "Support", url: "https://discord.gg/zeBet3HrU4/"}))] })
+pollcord(interaction.client, interaction.channelId, { 
+  question: "Why PollCord?", 
+  answers: [
+    {text: "Performant", emoji: "😏"},
+    {text: "easy to use", emoji: "😍"},
+    {text: "Beginner Friendly", emoji: "😀"}
+  ], 
+  duration: "7 days", 
+  multiSelect: true 
+}, { 
+  content: "@everyone plz vote this poll thx", 
+  embeds: [new EmbedBuilder().setColor("Blurple").setDescription("PollCord")], 
+  components: [new ActionRowBuilder().addComponents(new ButtonBuilder({style: ButtonStyle.Link, label: "Support", url: "https://discord.gg/zeBet3HrU4/"}))] 
+});
+
 ```
 poll only:
 ```js
-pollcord(interaction.client, interaction.channelId, { question: "Why PollCord?", answers: {{text:"Performant",emoji:"😏"}, {text:"Fully written in Typescript",emoji:"😍"}, {text: "Beginner Friendly",emoji:"😀"}}, duration: "7 days" })
+pollcord(interaction.client, interaction.channelId, { 
+  question: "Why PollCord?", 
+  answers: [
+    {text:"Performant", emoji:"😏"},
+    {text:"easy to use", emoji:"😍"},
+    {text: "Beginner Friendly", emoji:"😀"}
+  ], 
+  duration: "7 days" 
+});
+
 ```
 ### Backlinks
 [shockbs](https://shockbs.is-a.dev)
