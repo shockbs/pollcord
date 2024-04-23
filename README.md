@@ -12,11 +12,13 @@ npm i pollcord
 ```
 Import pollcord
 ```js
-const pollcord = (import("pollcord")).ShockBS
+import PollCord from "pollcord";
+const pollcord = PollCord.ShockBS
 ```
 or
 ```js
-const pollcord = (require("pollcord")).ShockBS
+const PollCord = require("pollcord");
+const pollcord = PollCord.ShockBS
 ```
 ## Usage
 ```js
