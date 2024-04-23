@@ -4,7 +4,7 @@ send polls with discord.js
 ## Why PollCord?
 - performant
 - beginnnner friendly
-
+![image](https://i.ibb.co/KLsMTpn/Screenshot-2024-0423-201207.jpg)
 # Getting Started
 install pollcord
 ```

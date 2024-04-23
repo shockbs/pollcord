@@ -2,7 +2,7 @@
   "name": "pollcord",
   "description": "Send and use the new Discord poll feauture with discord.js",
   "package-name": "pollcord",
-  "version": "0.0.1243",
+  "version": "0.0.1244",
   "author": "shockbs",
   "license": "CC-BY-NC 4.0",
   "exports": {
