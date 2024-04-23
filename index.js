@@ -34,7 +34,6 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     
     const emojis = [];
     if (typeof options.duration === "string") {
-        options.duration = parseDuration(options.duration);
         const regex = /^(\d+)\s*(hour|hours|hr|h|hrs|min|mins|m|minute|minutes|day|days|d|week|w)$/i;
         const match = duration.match(regex);
         if (!match) throw new Error("Invalid duration format");
