@@ -119,12 +119,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
         })
         messageOptions.components = embeds;
     }
-    const body = {
-        content: messageOptions.content || "",
-        components: messageOptions.components || [],
-        embeds: messageOptions.embeds || [],
-        files: messageOptions.files || [],
-        allowedMentions: messageOptions.allowedMentions || {repliedUser:true},
+    let body = {
         poll: {
             question: {text:options.question},
             answers: emojis.map(x=> ({poll_media: {text:x.text,emoji:x.emoji}})),
@@ -132,6 +127,10 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
             allow_multiselect: options.multiSelect
         }
     }
+    if (messageOptions.content) body.content = messageOptions.content;
+    if (components.length) body.components = components;
+    if (messageOptions.files) body.files = messageOptions.files;
+    if (messageOptions.allowedMentions) body.allowedMentions;
     // SHOCK
     return client.rest.post(`/channels/${channelId}/messages`, { body });
     } catch(e) {
