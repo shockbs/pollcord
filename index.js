@@ -1,0 +1,1 @@
+const { ShockBS } = require('./index.ts'); module.exports = ShockBS;

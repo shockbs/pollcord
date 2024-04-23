@@ -1,18 +1,17 @@
 {
   "name": "pollcord",
   "description": "Send and use the new Discord poll feauture with discord.js",
-  "type": "module",
   "package-name": "pollcord",
-  "version": "0.0.115",
+  "version": "0.0.116",
   "author": "shockbs",
   "license": "CC-BY-NC 4.0",
   "exports": {
     ".": {
-      "import": "./index.ts",
-      "require": "./index.ts"
+      "import": "./index.js",
+      "require": "./index.js"
     }
   },
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

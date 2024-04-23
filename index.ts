@@ -133,4 +133,4 @@ function ShockBS(client:Client, channelId:string ,options: CuteOptions, messageO
     // SHOCK
     return client.rest.post(`/channels/${channelId}/messages`, { body });
 }
-export default ShockBS;
+export { ShockBS };
