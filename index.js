@@ -1,1 +1,1 @@
-const { ShockBS } = require('./index.ts'); module.exports = ShockBS;
+const { ShockBS } = require('./index.ts'); module.exports = { ShockBS };
