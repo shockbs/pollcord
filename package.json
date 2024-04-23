@@ -3,13 +3,14 @@
   "description": "Send and use the new Discord poll feauture with discord.js",
   "type": "module",
   "package-name": "pollcord",
-  "version": "0.0.113",
+  "version": "0.0.114",
   "author": "shockbs",
   "license": "CC-BY-NC 4.0",
   "exports": {
-    ".": "./index.ts",
-    "import": "./index.ts",
-    "require": "./index.ts"
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js"
+    }
   },
   "main": "index.ts",
   "scripts": {
