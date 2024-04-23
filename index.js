@@ -31,9 +31,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     if (options.question.length > 300) {
         options.question = options.question.substr(0,299) + "…";
     }
-    if (typeof options.duration !== ("number"||"string")) {
-        throw new Error("duration must be provided as a number or string");
-    }
+    
     const emojis = [];
     if (typeof options.duration === "string") {
         options.duration = parseDuration(options.duration);
