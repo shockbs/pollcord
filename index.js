@@ -17,7 +17,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     if (!options.question?.length || !options.answers?.length || !options.duration) {
         throw new Error("Missing required options");
     }
-    if (answers.length > 10) {
+    if (options.answers.length > 10) {
         throw new Error("The answers array should not have more than 10");
     }
     if (options.multiSelect&&typeof options.multiSelect !== "boolean") {
