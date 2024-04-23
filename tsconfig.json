@@ -2,7 +2,7 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "target": "ESNext",
     "isolatedModules": true,
     "esModuleInterop": true,
