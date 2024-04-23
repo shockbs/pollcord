@@ -1,4 +1,4 @@
-const emojiRegex = require('emoji-regex')(); const { EmbedBuilder, ActionRowBuilder, /*Client*/ } = require("discord.js");/*
+const emojiRegex = require('emoji-regex')(); const { EmbedBuilder, ActionRowBuilder, AttachmentBuilder /*Client*/ } = require("discord.js");/*
 interface CuteOptions {
     question: string;
     answers: { text: string; emoji: string; }[];
@@ -117,7 +117,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
                 components.push(component);
             }
         })
-        messageOptions.components = embeds;
+        messageOptions.component = components;
     }
     let body = {
         poll: {
@@ -129,7 +129,17 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     }
     if (messageOptions?.content?.length) body.content = messageOptions.content;
     if (components.length) body.components = components;
-    if (messageOptions?.files) body.files = messageOptions.files;
+    if (messageOptions?.files?.length) {
+        const files = []
+        messageOptions.files.forEach(component=> {
+            if (component instanceof AttachmentBuilder) {
+                files.push(component.toJSON());
+            } else {
+                files.push(component);
+            }
+        })
+        body.files = files
+    }
     if (messageOptions?.allowedMentions) body.allowedMentions;
     if (embeds.length) body.embeds = embeds;
     // SHOCK
