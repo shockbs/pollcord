@@ -44,23 +44,33 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
         case "hours":
         case "hr":
         case "hrs":
-        case "h":
+        case "h": {
             options.duration = value;
+            break;
+        }
         case "min":
         case "mins":
         case "minute":
         case "minutes":
-        case "m":
+        case "m": {
             options.duration = value / 60;
+            break;
+        }
         case "day":
         case "days":
-        case "d":
+        case "d": {
             options.duration = value * 24;
+            break;
+        }
         case "week":
-        case "w":
+        case "w": {
             options.duration = value * 24 * 7;
-        default:
+            break;
+        }
+        default: {
             throw new Error("Invalid duration unit");
+            break;
+        }
         }
     }
     options.answers.forEach(answer=> {
@@ -109,9 +119,12 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
         })
         messageOptions.components = embeds;
     }
-    if (!messageOptions) messageOptions = {content:""};
     const body = {
-        ...[messageOptions],
+        content: messageOptions.content || "",
+        components: messageOptions.components || [],
+        embeds: messageOptions.embeds || [],
+        files: messageOptions.files || [],
+        allowedMentions: messageOptions.allowedMentions || {repliedUser:true},
         poll: {
             question: {text:options.question},
             answers: emojis.map(x=> ({poll_media: {text:x.text,emoji:x.emoji}})),
