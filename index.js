@@ -131,6 +131,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     if (components.length) body.components = components;
     if (messageOptions.files) body.files = messageOptions.files;
     if (messageOptions.allowedMentions) body.allowedMentions;
+    if (embeds.length) body.embeds = embeds;
     // SHOCK
     return client.rest.post(`/channels/${channelId}/messages`, { body });
     } catch(e) {
