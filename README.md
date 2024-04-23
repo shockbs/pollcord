@@ -4,8 +4,6 @@ send polls with discord.js
 ## Why PollCord?
 - performant
 - beginnnner friendly
-- Fully written in Typescript
-- Supports Typings
 
 # Getting Started
 install pollcord
