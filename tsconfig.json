@@ -16,7 +16,7 @@
     "lib": [
       "ES2020"
     ],
-    "module": "NodeNext",
+    "module": "nodenext",
     "rootDir": "./src",
     "baseUrl": "./",
     "types": [
@@ -32,9 +32,9 @@
 },
  "environment": {
     "moduleDetection": "auto",
-    "module": "NodeNext",
+    "module": "nodenext",
     "rootDir": ".",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types"
