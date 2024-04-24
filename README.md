@@ -171,6 +171,15 @@ pollcord(interaction.client, interaction.channelId, {
   components: [new ActionRowBuilder().addComponents(new ButtonBuilder({style: ButtonStyle.Link, label: "Support", url: "https://discord.gg/zeBet3HrU4/"}))]});
 
 ```
+## Star History
+
+<a href="https://star-history.com/#shockbs/pollcord&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=shockbs/pollcord&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=shockbs/pollcord&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=shockbs/pollcord&type=Date" />
+ </picture>
+</a>
 ### Backlinks
 [shockbs](https://shockbs.is-a.dev)
 Support: https://discord.gg/zeBet3HrU4
