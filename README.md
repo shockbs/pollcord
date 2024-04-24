@@ -33,6 +33,39 @@ pollcord(interaction.client, interaction.channelId, pollCordOptions, ,messageOpt
 ```js
 pollcord(message.client, message.channelId, pollCordOptions, messageOptions)
 ```
+## Docs
+```js
+import { Client } from "discord.js";
+const client = new Client(...)
+pollcord(
+client,
+// discord.js bot client
+channelId: String,
+// id of the channel to send at
+{
+  question: String,
+  //the question of the poll
+  answers: { text: string; emoji: string; }[],
+  // an array of answers, text is required
+  duration: number | string,
+  // how long the poll should lasts, can be a number in hour or string(ex: 1 hour, 90mins, 1 week, etc)
+  multiSelect: Boolean,
+  //optional, whether to allow multi selection or not, default: true
+},
+{
+  content: String,
+  // the content of the poll message
+  embeds: [],
+  // an array containing EmbedBuilder(s) or embeds json
+  components: [],
+  // an aray containing the ActionRowBuilder(s) or rows jsons
+  files: [],
+  // files to attach together in the poll, message. can be AttachmentBuilder(s) or attachment json
+  allowedMentions: {...},
+  // allowedMentions for the poll message
+}
+)
+```
 ### pollCordOptions:
 ```js
 const pollCordOptions = {
@@ -86,7 +119,7 @@ const PollCordAnswers = {
 ```
 you can only have up to 10 answers per poll
 ### messageOptions (array)
-you can also add content, embeds, components etc
+you can also add content, embeds, components, files etc
 ```js
 import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js"
 const messageOptions = {
@@ -103,6 +136,19 @@ new ActionRowBuilder().addComponents(new ButtonBuilder({style: ButtonStyle.Link,
 pollcord(base, channelId, pollCordOptions, messageOptions)
 ```
 ## Examples:
+- poll only:
+```js
+pollcord(interaction.client, interaction.channelId, { 
+  question: "Why PollCord?", 
+  answers: [
+    {text:"Performant", emoji:"😏"},
+    {text:"easy to use", emoji:"😍"},
+    {text: "Beginner Friendly", emoji:"😀"}
+  ], 
+  duration: "7 days" 
+});
+```
+- additional:
 ```js
 pollcord(interaction.client, interaction.channelId, { 
   question: "Why PollCord?", 
@@ -116,21 +162,7 @@ pollcord(interaction.client, interaction.channelId, {
 }, { 
   content: "@everyone plz vote this poll thx", 
   embeds: [new EmbedBuilder().setColor("Blurple").setDescription("PollCord")], 
-  components: [new ActionRowBuilder().addComponents(new ButtonBuilder({style: ButtonStyle.Link, label: "Support", url: "https://discord.gg/zeBet3HrU4/"}))] 
-});
-
-```
-poll only:
-```js
-pollcord(interaction.client, interaction.channelId, { 
-  question: "Why PollCord?", 
-  answers: [
-    {text:"Performant", emoji:"😏"},
-    {text:"easy to use", emoji:"😍"},
-    {text: "Beginner Friendly", emoji:"😀"}
-  ], 
-  duration: "7 days" 
-});
+  components: [new ActionRowBuilder().addComponents(new ButtonBuilder({style: ButtonStyle.Link, label: "Support", url: "https://discord.gg/zeBet3HrU4/"}))]});
 
 ```
 ### Backlinks

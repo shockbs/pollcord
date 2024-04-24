@@ -34,7 +34,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
     
     const emojis = [];
     if (typeof options.duration === "string") {
-        const regex = /^(\d+)\s*(hour|hours|hr|h|hrs|min|mins|m|minute|minutes|day|days|d|week|w)$/i;
+        const regex = /^(\d+)\s*(hour|hours|hr|h|hrs|min|mins|m|minute|minutes|day|days|d|week|w|weeks)$/i;
         const match = options.duration.match(regex);
         if (!match) throw new Error("Invalid duration format");
         const value = parseInt(match[1]);
@@ -63,6 +63,7 @@ function ShockBS(client/*:Client*/, channelId/*:string*/ ,options/*: CuteOptions
             break;
         }
         case "week":
+        case "weeks":
         case "w": {
             options.duration = value * 24 * 7;
             break;
